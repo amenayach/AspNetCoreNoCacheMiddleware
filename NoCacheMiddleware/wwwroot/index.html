@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ping</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+
+            $.ajax({
+                url: '/api/values',
+                type: 'GET',
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    jQuery("#dvTest").text(data);
+                },
+                error: function (x, y, z) {
+                    console.log(x);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="dvTest"></div>
+
+</body>
+</html>
