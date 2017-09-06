@@ -38,7 +38,7 @@ namespace NoCacheMiddleware
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             app.UseStaticFiles();
-            //app.UseDisableCacheMiddleware();
+            app.UseDisableCacheMiddleware();
             app.UseMvc();
         }
     }
